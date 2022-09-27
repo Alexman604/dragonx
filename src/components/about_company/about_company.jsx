@@ -1,6 +1,7 @@
     import React, { Component } from 'react';
-import DragonServices from '../../services/fetchdata';
-    import Spinner from '../spinner/spinner';
+    import DragonServices from '../../services/fetchdata';
+import Spinner from '../spinner/spinner';
+    import "./about_company.css"
  
 class AboutCompany extends Component {
     state = {

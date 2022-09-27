@@ -5,6 +5,7 @@ import AboutCompany from "./components/about_company/about_company";
 import Capsules from "./components/capsules/capsules";
 import Crew from "./components/crew/crew";
 import Dragons from "./components/dragons/dragons";
+import Header from "./components/header/header";
 
 class App extends Component {
   constructor(props) {
@@ -16,34 +17,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <div className="header">this is header</div>
-        </header>
+          <Header/>
         <div className="page">
-          <section className="left-section ">
-            <ul className="menu">
-              <li>
-                  <Link to={"/"}>
-                  <span> About SpaceX </span>
-                </Link>
-              </li>
-              <li>
-                <Link to={"/capsules"}>
-                  <span>Capsules</span>
-                </Link>
-              </li>
-              <li>
-                <Link to={"/crew"}>
-                  <span>Crew</span>
-                </Link>
-              </li>
-              <li>
-                <Link to={"/dragons"}>
-                  <span>Dragons</span>
-                </Link>
-              </li>
-            </ul>
-          </section>
+         
 
           <Routes className ="content">
             <Route path="/" element={<AboutCompany />} />
