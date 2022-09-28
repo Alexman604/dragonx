@@ -1,8 +1,23 @@
 .about {
     background-image: url(../img/space-1.png) ;
-    height: 90vh;
+    max-height: calc(100vh - 160px);
     width: 100vw;
+    height: 100vh;
     color: white;
     font-size: 1.1rem;
     background-size: cover;
+    box-shadow: grey 0px 30px 40px -2em inset;
+    padding-bottom: 80px;
+}
+
+.text-wrapper {
+    
+    width: 60%;
+   padding: 1rem;
+   
+    margin: 0;
+}
+
+.text-wrapper p {
+    margin: 1rem;
 }

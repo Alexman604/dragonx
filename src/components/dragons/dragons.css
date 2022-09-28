@@ -1,0 +1,46 @@
+.wrapper {
+    
+    background-image: url(../img/Falcon-9-Engines-Landscape-resized.jpg) ;
+    height: calc(100vh - 160px);
+    width: 100vw;
+    color: white;
+    font-size: 1.1rem;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: grey 0px 30px 40px -2em inset;
+    padding-bottom: 80px;
+    padding-top: 80px;
+  
+}
+
+.dragon{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.description {
+    width: 60%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.721);
+    box-shadow: rgba(217, 217, 231, 0.395) 0px 0px 16px;
+}
+
+.description p, a {
+    margin: 20px;
+}
+
+#dragonCarousel {
+    width: 40%;
+    height: 100%;
+}
+
+#dragonCarousel img{
+  width: fit-content;
+}

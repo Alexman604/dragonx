@@ -1,12 +1,18 @@
+
+
+
 .App {
   text-align: center;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
+body::-webkit-scrollbar {
+  display: none;
 
-
-
+}
 
 .page {
   display: flex;

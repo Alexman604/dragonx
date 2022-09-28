@@ -35,6 +35,8 @@ class Header extends Component {
                   </li>
                 </ul>
               </div>
+                <div className='login'> LOGIN</div>
+
             </div>
           </header>
         );

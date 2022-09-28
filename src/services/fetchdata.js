@@ -1,4 +1,4 @@
-import Dragons from "../components/dragons/dragons";
+
 
 class DragonServices {
   _API = "https://api.spacexdata.com/v4";
@@ -18,13 +18,13 @@ class DragonServices {
 
   getDragons = async () => {
     const dragons = await this.getData(`${this._API}/dragons`);
-      return dragons.map(this._transformDragon);
-    };
-    
-    getDragonById = async (id) => {
-        const dragon = await this.getData(`${this._API}/dragon/${id}`);
-        return this._transformDragon(dragon)
-    }
+    return dragons.map(this._transformDragon);
+  };
+
+  getDragonById = async (id) => {
+    const dragon = await this.getData(`${this._API}/dragon/${id}`);
+    return this._transformDragon(dragon);
+  };
 
   getCrewAll = async () => {
     const crew = await this.getData(`${this._API}/crew`);
@@ -43,20 +43,19 @@ class DragonServices {
       agency: employee.agency,
       wiki: employee.wikipedia,
       id: employee.id,
+      launches: [...employee.launches]
     };
+  };
+
+  _transformDragon = (dragon) => {
+    return {
+      name: dragon.name,
+      id: dragon.id,
+      images: [...dragon.flickr_images],
+      wiki: dragon.wikipedia,
+      description: dragon.description,
     };
-    
-    _transformDragon = (dragon) => {
-        return {
-            name: dragon.name,
-            id: dragon.id,
-            images: [...dragon.flickr_images],
-            wiki: dragon.wikipedia,
-            description: dragon.description
-        };
-    };
+  };
 }
 
 export default DragonServices;
-
-

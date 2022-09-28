@@ -1,25 +1,23 @@
 import React, { Component } from "react";
 import DragonServices from "../../services/fetchdata";
+import ModalEmployee from "../modal/modal";
 import Spinner from "../spinner/spinner";
 import "./crew.css";
 
 class Crew extends Component {
-  constructor(props) {
-    super(props);
-    console.log("constructor");
-  }
-
-  state = {
+   state = {
     data: [],
     loading: true,
+    modal: false,
+    modalData: {},
   };
 
   getCrewData = new DragonServices();
 
   updateData = () => {
     this.getCrewData  //get all data
-    .getCrewAll().
-    then((employees)=>{
+    .getCrewAll()
+    .then((employees)=>{
         this.setState({
           data: [...employees],
           loading: false,
@@ -33,6 +31,24 @@ class Crew extends Component {
         this.setState(employee);
       });
   };
+  
+  openModal = (id) => {
+    let index = this.state.data.findIndex((item) => item.id === id);
+    console.log(this.state.data[index].name);
+    this.setState({
+      modal: true,
+      modalData:  this.state.data[index] 
+    });
+  }
+
+  closeModal = () => {
+    
+   this.setState({modal: false});
+  }
+  
+  componentDidUpdate() {
+  console.log(this.state.modalData);
+  }
 
   componentDidMount() {
     setTimeout(() => { this.updateData() }, 1000) //timeout is for spinner
@@ -40,35 +56,27 @@ class Crew extends Component {
   }
 
   render() {
-    const { name, image, agency, wiki, id, data, loading } = this.state;
+    const { name, image, agency, wiki, id, data, loading, launches } = this.state;
     
     if(loading) {return <Spinner/>}
 
     
     return (
-      <div>
-        <div>
-          <div className="cardEmployee">
-            <img src={image} alt="" />
-            <p>{name} , id: {id}</p>
-            <p>{agency}</p>
-            <a href={wiki}>Wikipedia</a>
-          </div>
-        </div>
+      <div className="crew">
+        
+        <ModalEmployee modal={this.state.modal} modalData={this.state.modalData } closeModal={this.closeModal} />
         <div className="crew-wrapper">
           {data.map((item) => {
-            
-           return (
-             <React.Fragment key={item.id}>
-               <div className="cardEmployee">
-                 <img src={item.image} alt="" />
-                 <p>{item.name}</p>
-                 <p>{item.agency}</p>
-                 <a href={item.wiki}>Wikipedia</a>
-               </div>
-             </React.Fragment>
-           );
-            
+            return (
+              <React.Fragment key={item.id}>
+                <div className="cardEmployee" onClick={() => this.openModal(item.id)}>
+                  <img src={item.image} alt="" />
+                  <p>{item.name}</p>
+                  <p>{item.agency}</p>
+                  <a href={item.wiki}>Wikipedia</a>
+                </div>
+              </React.Fragment>
+            );
           })}
         </div>
       </div>

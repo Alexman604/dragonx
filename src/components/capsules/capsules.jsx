@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Capsules extends Component {
-    render() {
-        return (
-            <div>
-                Capsules component
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        Capsules
+      </div>
+    );
+  }
 }
 
 export default Capsules;
