@@ -52,7 +52,9 @@ footer {
 
 
 .links1 ul {
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 5px;
 }
 
