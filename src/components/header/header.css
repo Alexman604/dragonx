@@ -8,6 +8,12 @@ header {
   background-color: black;
 }
 
+.logo-burger {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+ 
+}
 .header-inner {
   display: flex;
 
@@ -15,6 +21,12 @@ header {
   height: 100%;
   text-align: left;
   align-items: center;
+}
+
+
+.navigation-button {
+  margin-left: 40px;
+  display: none;
 }
 
 .header-inner img {
@@ -76,7 +88,7 @@ header {
 }
 
 .header-inner {
-     flex-direction: column;
+  flex-direction: column;
 }
 .nav-links {
   flex-direction: column;
@@ -90,5 +102,11 @@ header {
   position: relative;
  margin-bottom: 15px;
 }
+.navigation-button {
   
+  display: contents;
+}
+  .close-menu {
+  display: none
+}
 }

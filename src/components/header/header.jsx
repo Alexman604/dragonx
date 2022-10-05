@@ -5,14 +5,33 @@ import Logo from "../img/spacex.svg";
 import "./header.css";
 
 class Header extends Component {
+  state = {
+    menuStatus: false,
+    
+  }
+  showMenu = () => {
+    this.setState(() => ({ menuStatus: !this.state.menuStatus }))
+    console.log(this.state.menuStatus);
+  }
+
+  closeMenu = () => {
+     this.setState(() => ({ menuStatus: false }));
+  }
   render() {
     return (
       <header>
         <div className="header-inner">
-          <img src={Logo} alt="Spacex logo" />
+          <div className="logo-burger">
+            <img src={Logo} alt="Spacex logo" />
 
-          <div className="navigation">
-            <ul className="nav-links">
+            <div className="navigation-button">
+              <button button onClick={this.showMenu}>
+                <i className="bi bi-list"></i>
+              </button>
+            </div>
+          </div>
+          <div className={this.state.menuStatus ? "navigation" : "close-menu"}>
+            <ul className="nav-links" onClick={this.closeMenu}>
               <Link to={"/"} style={{ textDecoration: "none" }}>
                 <li className="nav-item">
                   <span> ABOUT SPACEX </span>
@@ -37,7 +56,7 @@ class Header extends Component {
             </ul>
           </div>
           <div id="login"> LOGIN</div>
-          <GoogleLogin/>
+          <GoogleLogin />
         </div>
       </header>
     );
