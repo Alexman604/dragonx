@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DragonServices from "../../services/fetchdata";
+import Video from "../img/Untitled_4.mp4";
 
 import "./about_company.css";
 
@@ -28,6 +29,9 @@ class AboutCompany extends Component {
 
     return (
       <div className="about">
+        <video className="video" src={Video} autoPlay muted loop>
+          {" "}
+        </video>
         <div className="text-wrapper">
           <h2>{name}</h2>
           <p>"{summary}"</p>

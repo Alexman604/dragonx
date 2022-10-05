@@ -1,28 +1,63 @@
 import React, { Component } from 'react';
-import { Carousel } from 'react-bootstrap';
+
+import "./carousel.css";
+
 
 class CarouselImages extends Component {
-  constructor(props) {
-    super(props);
+
+
+  state = {
+    imageIndex: 0,
+  };
+  componentDidMount() {
+    this.interval = setInterval(this.switchImage, 3000);
   }
-  componentDidUpdate() {
-    console.log(" updated");
+
+  switchImage = () => {
+    console.log("photos");
+    if (this.state.imageIndex < this.props.images.length - 1) {
+      this.setState({ imageIndex: this.state.imageIndex + 1 });
+    } else {
+      this.setState({ imageIndex: 0 });
+    }
+  };
+
+  onLeftClick = () => {
+    if (this.state.imageIndex === 0 ) {
+      this.setState({ imageIndex: this.props.images.length - 1 });
+    } else {
+      this.setState({ imageIndex: this.state.imageIndex - 1 });
+    }
+    clearInterval(this.interval);
+    console.log(this.state.imageIndex);
+  };
+
+  onRightClick = () => {
+    if (this.state.imageIndex < this.props.images.length - 1) {
+      this.setState({ imageIndex: this.state.imageIndex + 1 });
+    } else {
+      this.setState({ imageIndex: 0 });
+    }
+    clearInterval(this.interval);
+    console.log(this.state.imageIndex);
+  };
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
   render() {
-    const { images } = this.props;
-
     return (
-      <Carousel controls={false} indicators={true} slide={false}>
-        {images.map((image) => {
-          return (
-            <Carousel.Item key={image}>
-              <img className=" " src={`${image}`} alt="" />
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
+      <div className="carousel-wrapper">
+        <button onClick={this.onLeftClick}>
+          <p> {"<"} </p>
+        </button>
+
+        <img className="photo" onClick={() =>  (this.interval = setInterval(this.switchImage, 3000)) } src={this.props.images[this.state.imageIndex]} alt="dragon" />
+        <button onClick={this.onRightClick}>{" > "}</button>
+      </div>
     );
   }
 }
 
 export default CarouselImages;
+

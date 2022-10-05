@@ -21,23 +21,36 @@ class Footer extends Component {
     const { links } = this.state;
     return (
       <footer>
-        <div className="links">
+        <div className="links1">
           <ul>
             <li>
-              <a href={links.elon_twitter}>Elon Twitter</a>
+              <a target="_blank" rel="noreferrer" href={links.elon_twitter}>
+                Elon Twitter
+              </a>
             </li>
             <li>
-              <a href={links.flickr}>Flickr</a>
+              <a target="_blank" rel="noreferrer" href={links.flickr}>
+                Flickr
+              </a>
             </li>
             <li>
-              <a href={links.twitter}>Twitter</a>
+              <a target="_blank" rel="noreferrer" href={links.twitter}>
+                Twitter
+              </a>
             </li>
             <li>
-              <a href={links.website}>SpaceX</a>
+              <a target="_blank" rel="noreferrer" href={links.website}>
+                SpaceX
+              </a>
             </li>
-                </ul>
+            <li>
+              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/spacex">
+                YouTube
+              </a>
+            </li>
+          </ul>
         </div>
-                <p>made by AlexP @2022</p>
+        <p>made by AlexP @2022</p>
       </footer>
     );
   }

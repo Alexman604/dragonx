@@ -1,23 +1,72 @@
 .about {
-    background-image: url(../img/space-1.png) ;
-    max-height: calc(100vh - 160px);
-    width: 100vw;
-    height: 100vh;
-    color: white;
-    font-size: 1.1rem;
-    background-size: cover;
-    box-shadow: grey 0px 30px 40px -2em inset;
-    padding-bottom: 80px;
+  
+  width: 100vw;
+
+  color: white;
+  font-size: 1.1rem;
+  background-size: cover;
+  box-shadow: grey 0px 30px 40px -2em inset;
+  padding-bottom: 80px;
+  animation: filter-bright 1s linear;
 }
 
+
 .text-wrapper {
-    
-    width: 60%;
-   padding: 1rem;
-   
-    margin: 0;
+  width: 60%;
+  padding: 1rem;
+  margin: 0;
 }
 
 .text-wrapper p {
-    margin: 1rem;
+  margin: 1rem;
+}
+
+@keyframes filter-bright {
+  0% {
+    filter: brightness(0);
+  }
+
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+@media (max-width: 400px) {
+  .about {
+    
+    background-image: url(../img/space-1.png);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .links1 ul {
+    flex-direction: column;
+    margin: 5px;
+  }
+  .text-wrapper {
+  width: 95%;
+  padding: 0.5rem;  
+}
+
+.video {
+  display: none;
+}
+}
+
+.video {
+  width: 100%;
+  background-color: black;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: fixed;
+ 
+  min-height: 100%;
+  width: auto;
+  z-index: -1;
 }

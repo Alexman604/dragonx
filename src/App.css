@@ -1,33 +1,40 @@
-
-
-
 .App {
   text-align: center;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   position: relative;
   min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
 
+body {
+  animation: filter-bright 1s linear;
+}
+
+@keyframes filter-bright {
+  0% {
+    filter: brightness(0);
+  }
+
+  100% {
+    filter: brightness(100%);
+  }
 }
 
 .page {
   display: flex;
- 
+  /* background-color: black; */
+  min-height: calc(100vh - 160px);
+  
 }
 
-.left-section {
-  width: fit-content;
-}
-
-.menu li{
+.menu li {
   border: solid 1 px black;
   margin: 3px;
   min-width: fit-content;
-
 }
 
 .menu span {
@@ -37,4 +44,5 @@ body::-webkit-scrollbar {
 
 .content {
   width: fit-content;
+  background-color: black;
 }

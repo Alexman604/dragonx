@@ -5,7 +5,7 @@ import Spinner from "../spinner/spinner";
 import "./crew.css";
 
 class Crew extends Component {
-   state = {
+  state = {
     data: [],
     loading: true,
     modal: false,
@@ -15,73 +15,77 @@ class Crew extends Component {
   getCrewData = new DragonServices();
 
   updateData = () => {
-    this.getCrewData  //get all data
-    .getCrewAll()
-    .then((employees)=>{
-        this.setState({
-          data: [...employees],
-          loading: false,
-        })
-    }
-        )
-    
-    this.getCrewData //get one employee data
-      .getCrewEmployee("5ebf1a6e23a9a60006e03a7a")
-      .then((employee) => {
-        this.setState(employee);
-      });
+    console.log("hello from update data");
+    this.setState({ loading: true, modal: false });
+    setTimeout(() => {
+      this.getCrewData //get all employees data
+        .getCrewAll()
+        .then((employees) => {
+          this.setState({
+            data: [...employees],
+            loading: false,
+          });
+        });
+    }, 2000); //timeout is for spinner
   };
-  
+
   openModal = (id) => {
     let index = this.state.data.findIndex((item) => item.id === id);
-    console.log(this.state.data[index].name);
     this.setState({
       modal: true,
-      modalData:  this.state.data[index] 
+      modalData: this.state.data[index],
     });
-  }
+  };
 
   closeModal = () => {
-    
-   this.setState({modal: false});
-  }
-  
-  componentDidUpdate() {
-  console.log(this.state.modalData);
-  }
+    this.setState({ modal: false });
+  };
+
+
 
   componentDidMount() {
-    setTimeout(() => { this.updateData() }, 1000) //timeout is for spinner
-    
+    window.addEventListener("scroll", this.handleScroll);
+
+    this.updateData();
   }
-
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+  handleScroll = (event) => {
+     console.log(document.documentElement.scrollHeight, document.documentElement.scrollTop, document.documentElement.clientHeight);
+    if (window.scrollY <= 0) {
+      this.updateData();
+    }
+  };
   render() {
-    const { name, image, agency, wiki, id, data, loading, launches } = this.state;
-    
-    if(loading) {return <Spinner/>}
+    const { data, loading } = this.state;
 
-    
     return (
       <div className="crew">
-        
-        <ModalEmployee modal={this.state.modal} modalData={this.state.modalData } closeModal={this.closeModal} />
-        <div className="crew-wrapper">
-          {data.map((item) => {
-            return (
-              <React.Fragment key={item.id}>
-                <div className="cardEmployee" onClick={() => this.openModal(item.id)}>
-                  <img src={item.image} alt="" />
-                  <p>{item.name}</p>
-                  <p>{item.agency}</p>
-                  <a href={item.wiki}>Wikipedia</a>
-                </div>
-              </React.Fragment>
-            );
-          })}
+        <div className="crew-wrapper" name="crew" onScrollCapture={this.handleScroll}>
+          {loading ? <Spinner /> : <CrewList data={data} openModal={this.openModal} />}
         </div>
+        <ModalEmployee modal={this.state.modal} modalData={this.state.modalData} closeModal={this.closeModal} />
       </div>
     );
   }
 }
 
+const CrewList = ({ data, openModal }) => {
+ 
+  return (
+    <>
+      {data.map((item) => {
+        return (
+          <React.Fragment key={item.id}>
+            <div className="cardEmployee" onClick={() => openModal(item.id)}>
+              <img src={item.image} alt="" />
+              <p>{item.name}</p>
+            </div>
+          </React.Fragment>
+        );
+      })}
+    </>
+  );
+};
 export default Crew;

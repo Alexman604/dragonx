@@ -54,6 +54,14 @@ class DragonServices {
       images: [...dragon.flickr_images],
       wiki: dragon.wikipedia,
       description: dragon.description,
+      type: dragon.type,
+      crew_capacity: dragon.crew_capacity,
+      dry_mass_kg: dragon.dry_mass_kg,
+      heat_shield: dragon.heat_shield ,
+      launch_payload_mass: dragon.launch_payload_mass,
+      height_w_trunk: dragon.height_w_trunk,
+      diameter: dragon.diameter,
+
     };
   };
 }

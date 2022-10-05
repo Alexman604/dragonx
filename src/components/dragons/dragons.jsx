@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CarouselImages from "../../carousel/carousel";
 import DragonServices from "../../services/fetchdata";
+import DragonItemByiD from "../dragon_item/dragon_item";
 import "./dragons.css";
 
 class Dragons extends Component {
@@ -13,36 +14,49 @@ class Dragons extends Component {
     this.getDragonData.getDragons().then((dragons) => {
       this.setState({
         data: [...dragons],
+        dragonId: null,
       });
     });
   }
+  onBack = () => {
+    this.setState({ dragonId: null });
+  }
+  onDragon = (id) => {
+    this.setState({ dragonId: id });
+    console.log(this.state.dragonId);
+  };
 
   render() {
-    const { data } = this.state;
+    const { data, dragonId } = this.state;
 
-    return (
-      <div className="wrapper">
-        {data.map((item) => {
-          return (
-            <React.Fragment key={item.id}>
-              <div className="dragon">
-                <div className="description">
-                  <h2>{item.name}</h2>
-                  <p>{item.description}</p>
-                  <a href={item.wiki}>Wikipedia</a>
-                </div>
-
-                <div id="dragonCarousel" >
-                          <CarouselImages images={item.images } /> 
-                  
-                </div>
-              </div>
-            </React.Fragment>
-          );
-        })}
-      </div>
-    );
+    return <div className="wrapper">{dragonId ?
+      <DragonItemByiD onBack={this.onBack} dragonId={dragonId} data={data} />
+      : <DragonsList data={data} onDragon={this.onDragon} />}</div>;
   }
 }
+
+
+const DragonsList = ({ data, onDragon }) => {
+
+  return (
+    <>
+      {data.map((item) => {
+
+        return (
+          <div className="dragon" key={item.id}>
+            <div className="description">
+              <h2 onClick={() => onDragon(item.id)}>{item.name} </h2>
+              <p>{item.description} </p>
+            </div>
+
+            <div id="dragonCarousel">
+              <CarouselImages images={item.images} />
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
 export default Dragons;

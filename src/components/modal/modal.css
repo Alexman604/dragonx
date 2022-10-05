@@ -1,25 +1,68 @@
-.modal-wrapper {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0);
+.modal1-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
 }
-
 
 .active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
-.modal-content{
-    padding: 20px;
-    border-radius: 20px;
-    background-color: wheat;
-    height: auto;
-    width: 40%
+.modal1-content {
+  background-color: black;
+  height: 60%;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.modal1-content img {
+  height: 100%;
+  width: auto;
+}
+
+.info {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: black;
+}
+
+.info * {
+  padding: 1rem;
+  color: white;
+}
+
+.info a:hover,
+.info a:focus {
+  background-color: rgba(255, 255, 255, 0.221);
+  color: white;
+  filter: brightness(120%);
+}
+
+@media (max-width: 400px) {
+    .modal1-content {
+       flex-direction: column;
+       align-items: center;
+       height: 80%;
+      
+       
+    }
+.modal1-content img {
+  height: auto;
+  width: 90%;
+}
+.info * {
+  padding: 0.4rem;
+  color: white;
+}
+
 }

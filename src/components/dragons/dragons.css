@@ -1,46 +1,87 @@
 .wrapper {
-    
-    background-image: url(../img/Falcon-9-Engines-Landscape-resized.jpg) ;
-    height: calc(100vh - 160px);
-    width: 100vw;
-    color: white;
-    font-size: 1.1rem;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: grey 0px 30px 40px -2em inset;
-    padding-bottom: 80px;
-    padding-top: 80px;
+  background-image: url(../img/Falcon-9-Engines-Landscape-resized.jpg);
+  min-height: calc(100vh - 160px);
+  width: 100vw;
+  color: white;
+  font-size: 1.1rem;
+  /* background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  
+  box-shadow: grey 0px 30px 40px -2em inset;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
 }
 
-.dragon{
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    padding: 1rem;
-    justify-content: space-around;
-    align-items: center;
-    
+.dragon {
+  display: flex;
+  height: 40vh;
+  align-items: center;
 }
 
 .description {
-    width: 60%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.721);
-    box-shadow: rgba(217, 217, 231, 0.395) 0px 0px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.805);
+  box-shadow: rgba(217, 217, 231, 0.245) 0px 0px 16px;
 }
 
-.description p, a {
-    margin: 20px;
+.description p {
+  margin: 1rem 3rem;
+  text-align: justify;
 }
 
 #dragonCarousel {
-    width: 40%;
-    height: 100%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#dragonCarousel img{
-  width: fit-content;
+.dragon h2:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  
+}
+.dragon {
+  animation: filter-bright 3s ease-out;
+}
+
+@keyframes filter-bright {
+  0% {
+    filter: brightness(0);
+  }
+
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+
+@media (max-width: 400px) {
+.dragon {
+  display: flex;
+  flex-direction: column;
+  
+  height: auto;
+}
+.description {
+  width: 100%;
+}
+.wrapper {
+  padding-bottom: 180px;
+}
+
+#dragonCarousel {
+  width: 100%;
+}
+
 }
