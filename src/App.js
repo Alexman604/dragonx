@@ -7,12 +7,12 @@ import Crew from "./components/crew/crew";
 import Dragons from "./components/dragons/dragons";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
-import "./firebase"
-import { getAuth } from "firebase/auth";
-import GoogleLogin from "./components/google_auth/google_login";
+//import "./firebase"
+//import { getAuth } from "firebase/auth";
 
 
-const auth = getAuth();
+
+
 class App extends Component {
  
 
