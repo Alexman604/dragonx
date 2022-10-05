@@ -25,7 +25,7 @@ class Header extends Component {
             <img src={Logo} alt="Spacex logo" />
 
             <div className="navigation-button">
-              <button button onClick={this.showMenu}>
+              <button onClick={this.showMenu}>
                 <i className="bi bi-list"></i>
               </button>
             </div>
