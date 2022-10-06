@@ -7,13 +7,12 @@
   /* background-size: cover; */
   display: flex;
   flex-direction: column;
-  
+
   box-shadow: grey 0px 30px 40px -2em inset;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 .dragon {
@@ -49,7 +48,6 @@
   background-color: white;
   color: black;
   cursor: pointer;
-  
 }
 .dragon {
   animation: filter-bright 3s ease-out;
@@ -65,23 +63,21 @@
   }
 }
 
-
 @media (max-width: 400px) {
-.dragon {
-  display: flex;
-  flex-direction: column;
-  
-  height: auto;
-}
-.description {
-  width: 100%;
-}
-.wrapper {
-  padding-bottom: 180px;
-}
+  .dragon {
+    display: flex;
+    flex-direction: column;
 
-#dragonCarousel {
-  width: 100%;
-}
+    height: auto;
+  }
+  .description {
+    width: 100%;
+  }
+  .wrapper {
+    padding-bottom: 180px;
+  }
 
+  #dragonCarousel {
+    width: 100%;
+  }
 }

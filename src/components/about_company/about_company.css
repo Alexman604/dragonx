@@ -1,5 +1,4 @@
 .about {
-  
   width: 100vw;
 
   color: white;
@@ -9,7 +8,6 @@
   padding-bottom: 80px;
   animation: filter-bright 1s linear;
 }
-
 
 .text-wrapper {
   width: 60%;
@@ -33,7 +31,6 @@
 
 @media (max-width: 400px) {
   .about {
-    
     background-image: url(../img/space-1.png);
     background-attachment: fixed;
     background-position: top;
@@ -46,13 +43,13 @@
     margin: 5px;
   }
   .text-wrapper {
-  width: 95%;
-  padding: 0.5rem;  
-}
+    width: 95%;
+    padding: 0.5rem;
+  }
 
-.video {
-  display: none;
-}
+  .video {
+    display: none;
+  }
 }
 
 .video {
@@ -65,7 +62,7 @@
   padding-top: 80px;
   padding-bottom: 80px;
   position: fixed;
- 
+
   min-height: 100%;
   width: auto;
   z-index: -1;

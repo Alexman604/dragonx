@@ -1,43 +1,33 @@
 .carousel-wrapper {
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
 .photo {
-    max-height: 40vh;
-    max-width: 90%;
-    width: auto;
-    
-
+  max-height: 40vh;
+  max-width: 90%;
+  width: auto;
 }
 
 .carousel-wrapper button {
-    height: 5vh;
-    background-color:rgba(223, 221, 221, 0.629);
-    padding: 10px;
-    filter: brightness(40%);
+  height: 5vh;
+  background-color: rgba(223, 221, 221, 0.629);
+  padding: 10px;
+  filter: brightness(40%);
 }
 .carousel-wrapper button:hover,
 .carousel-wrapper button:focus {
-  
-
   filter: brightness(120%);
 }
 
 @media (max-width: 400px) {
-
-.carousel-wrapper {
+  .carousel-wrapper {
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 380px;
-    
-}
-
+  }
 }

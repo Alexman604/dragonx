@@ -7,16 +7,14 @@ import "./header.css";
 class Header extends Component {
   state = {
     menuStatus: false,
-    
-  }
+  };
   showMenu = () => {
-    this.setState(() => ({ menuStatus: !this.state.menuStatus }))
-    console.log(this.state.menuStatus);
-  }
+    this.setState(() => ({ menuStatus: !this.state.menuStatus }));
+  };
 
   closeMenu = () => {
-     this.setState(() => ({ menuStatus: false }));
-  }
+    this.setState(() => ({ menuStatus: false }));
+  };
   render() {
     return (
       <header>

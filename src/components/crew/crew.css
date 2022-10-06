@@ -40,13 +40,8 @@
   color: white;
 }
 
-
 @media (max-width: 400px) {
-.crew {
-   padding-bottom: 160px;
-}
-
-
-
-
+  .crew {
+    padding-bottom: 160px;
+  }
 }

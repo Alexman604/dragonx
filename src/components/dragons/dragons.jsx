@@ -20,7 +20,7 @@ class Dragons extends Component {
   }
   onBack = () => {
     this.setState({ dragonId: null });
-  }
+  };
   onDragon = (id) => {
     this.setState({ dragonId: id });
     console.log(this.state.dragonId);
@@ -28,20 +28,14 @@ class Dragons extends Component {
 
   render() {
     const { data, dragonId } = this.state;
-
-    return <div className="wrapper">{dragonId ?
-      <DragonItemByiD onBack={this.onBack} dragonId={dragonId} data={data} />
-      : <DragonsList data={data} onDragon={this.onDragon} />}</div>;
+    return <div className="wrapper">{dragonId ? <DragonItemByiD onBack={this.onBack} dragonId={dragonId} data={data} /> : <DragonsList data={data} onDragon={this.onDragon} />}</div>;
   }
 }
 
-
 const DragonsList = ({ data, onDragon }) => {
-
   return (
     <>
       {data.map((item) => {
-
         return (
           <div className="dragon" key={item.id}>
             <div className="description">

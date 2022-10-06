@@ -15,7 +15,7 @@ class Crew extends Component {
   getCrewData = new DragonServices();
 
   updateData = () => {
-    console.log("hello from update data");
+  //  console.log("hello from update data");
     this.setState({ loading: true, modal: false });
     setTimeout(() => {
       this.getCrewData //get all employees data
@@ -41,18 +41,15 @@ class Crew extends Component {
     this.setState({ modal: false });
   };
 
-
-
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-
     this.updateData();
   }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
   handleScroll = (event) => {
-     console.log(document.documentElement.scrollHeight, document.documentElement.scrollTop, document.documentElement.clientHeight);
+    console.log(document.documentElement.scrollHeight, document.documentElement.scrollTop, document.documentElement.clientHeight);
     if (window.scrollY <= 0) {
       this.updateData();
     }
@@ -72,7 +69,6 @@ class Crew extends Component {
 }
 
 const CrewList = ({ data, openModal }) => {
- 
   return (
     <>
       {data.map((item) => {

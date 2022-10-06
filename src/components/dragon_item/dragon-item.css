@@ -1,15 +1,14 @@
 .dragon-info {
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
- 
-  
+
   background-color: rgba(0, 0, 0, 0.805);
   box-shadow: rgba(217, 217, 231, 0.245) 0px 0px 16px;
 }
 .dragon-info a:hover,
 .dragon-info a:focus,
-.dragon-info button:hover{
+.dragon-info button:hover {
   background-color: rgba(255, 255, 255, 0.221);
   color: white;
   filter: brightness(120%);
@@ -21,5 +20,5 @@ display: flex;
 }
 
 .dragon-info button {
-   background-color: black; 
+  background-color: black;
 }

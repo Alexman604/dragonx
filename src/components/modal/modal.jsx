@@ -3,13 +3,12 @@ import "./modal.css";
 
 class ModalEmployee extends Component {
   render() {
-     
     const {
       modal,
       closeModal,
       modalData: { image, name, agency, wiki, launches },
     } = this.props;
-    
+
     return (
       <div className={modal ? "modal1-wrapper active" : "modal1-wrapper"} onClick={closeModal}>
         <div

@@ -44,20 +44,15 @@ footer p {
   filter: brightness(120%);
 }
 
-
 @media (max-width: 400px) {
-footer {
-  height: auto;
-}
+  footer {
+    height: auto;
+  }
 
-
-.links1 ul {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 5px;
-}
-
-
-  
+  .links1 ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+  }
 }

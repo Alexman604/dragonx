@@ -1,24 +1,23 @@
-import React from 'react';
-import CarouselImages from '../../carousel/carousel';
-import "./dragon-item.css"
+import React from "react";
+import CarouselImages from "../../carousel/carousel";
+import "./dragon-item.css";
 
 const DragonItemByiD = ({ dragonId, onBack, data }) => {
-    
-    let index = data.findIndex((item) => item.id === dragonId);
-    
-    const {
-      name,
-        type,
-      images,
-      crew_capacity,
-      dry_mass_kg,
-      heat_shield: { dev_partner, material, size_meters, temp_degrees },
-      launch_payload_mass,
-      height_w_trunk,
-        diameter,
-      wiki
-    } = data[index];
-    
+  let index = data.findIndex((item) => item.id === dragonId);
+
+  const {
+    name,
+    type,
+    images,
+    crew_capacity,
+    dry_mass_kg,
+    heat_shield: { dev_partner, material, size_meters, temp_degrees },
+    launch_payload_mass,
+    height_w_trunk,
+    diameter,
+    wiki,
+  } = data[index];
+
   return (
     <div className="dragon-info-wrapper">
       <div className="dragon-info">
