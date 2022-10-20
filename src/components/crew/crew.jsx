@@ -49,10 +49,10 @@ class Crew extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
   handleScroll = (event) => {
-    console.log(document.documentElement.scrollHeight, document.documentElement.scrollTop, document.documentElement.clientHeight);
-    if (window.scrollY <= 0) {
-      this.updateData();
-    }
+  //  console.log(document.documentElement.scrollHeight, document.documentElement.scrollTop, document.documentElement.clientHeight);
+  //  if (window.scrollY <= 0) {
+    //  this.updateData();
+   // }
   };
   render() {
     const { data, loading } = this.state;

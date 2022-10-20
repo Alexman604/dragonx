@@ -23,7 +23,7 @@ class Dragons extends Component {
   };
   onDragon = (id) => {
     this.setState({ dragonId: id });
-    console.log(this.state.dragonId);
+   // console.log(this.state.dragonId);
   };
 
   render() {

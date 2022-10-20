@@ -22,6 +22,7 @@
 
 .cardEmployee {
   box-sizing: border-box;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -32,6 +33,7 @@
 }
 
 .cardEmployee img {
+  
   width: 200px;
   max-height: 250px;
 }

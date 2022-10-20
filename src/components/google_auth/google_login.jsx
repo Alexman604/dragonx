@@ -14,7 +14,7 @@ class GoogleLogin extends Component {
       client_id: process.env.REACT_APP_GOOGLE_ID,
       callback: this.handleCallbackResponse,
     });
-    google.accounts.id.renderButton(document.getElementById("login"), { theme: "outline", size: "small" });
+   // google.accounts.id.renderButton(document.getElementById("login"), { theme: "outline", size: "small" });
   }
 
   render() {

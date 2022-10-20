@@ -53,8 +53,8 @@ class Header extends Component {
               </Link>
             </ul>
           </div>
-          <div id="login"> LOGIN</div>
-          <GoogleLogin />
+          {/* <div id="login"> LOGIN</div>
+          <GoogleLogin /> */}
         </div>
       </header>
     );
